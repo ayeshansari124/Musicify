@@ -13,18 +13,11 @@ const LibraryCard = ({ title, subtitle, buttonText }) => (
 );
 
 const FooterLinks = () => {
-  const links = [
-    "Legal",
-    "Safety & Privacy Centre",
-    "Privacy Policies",
-    "Cookies",
-    "About Ads",
-    "Accessibility",
-  ];
+  const links = ["Legal", "Safety & Privacy Centre", "Privacy Policies", "Cookies", "About Ads", "Accessibility"];
   return (
     <div className="flex flex-wrap gap-2 sm:gap-4 p-2 sm:p-3 m-2 sm:m-5 text-xs sm:text-sm text-gray-400">
-      {links.map((link, i) => (
-        <span key={i} className="cursor-pointer hover:underline">{link}</span>
+      {links.map((l, i) => (
+        <span key={i} className="cursor-pointer hover:underline">{l}</span>
       ))}
     </div>
   );
@@ -37,12 +30,11 @@ const LanguageSelector = () => (
   </div>
 );
 
-const Section = () => {
+export default function Section() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      {/* Hamburger button for mobile */}
       <div className="sm:hidden fixed top-4 left-2 z-50">
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -60,49 +52,22 @@ const Section = () => {
         </button>
       </div>
 
-      {/* Section */}
       <aside
-        className={`
-          w-full sm:w-[25vw] flex flex-col bg-[#121212] rounded-lg m-2 fixed top-0 left-0 h-full
-          transform ${isOpen ? "translate-x-0" : "-translate-x-full"} sm:translate-x-0
-          transition-transform duration-300 ease-in-out z-40
-        `}
+        className={`w-full sm:w-[25vw] flex flex-col bg-[#121212] rounded-lg m-2 fixed top-0 left-0 h-full transform ${isOpen ? "translate-x-0" : "-translate-x-full"} sm:translate-x-0 transition-transform duration-300 ease-in-out z-40`}
       >
-        {/* Header */}
         <div className="flex justify-between items-center h-[10vh] p-2 sm:p-4 font-bold">
           <span className="text-sm sm:text-base text-gray-200">Your Library</span>
-          <img
-            src="./images/svg/add.svg"
-            alt="add"
-            className="h-6 sm:h-8 w-6 sm:w-8 rounded-full m-1 p-1 hover:scale-110 hover:bg-[#242424] cursor-pointer"
-          />
+          <img src="./images/svg/add.svg" alt="add" className="h-6 sm:h-8 w-6 sm:w-8 rounded-full m-1 p-1 hover:scale-110 hover:bg-[#242424] cursor-pointer" />
         </div>
 
-        <LibraryCard
-          title="Create Your First Playlist"
-          subtitle="It’s easy, we’ll help you"
-          buttonText="Create Playlist"
-        />
-        <LibraryCard
-          title="Let’s find some podcasts to follow"
-          subtitle="We’ll keep you updated on new episodes"
-          buttonText="Browse Podcasts"
-        />
+        <LibraryCard title="Create Your First Playlist" subtitle="It’s easy, we’ll help you" buttonText="Create Playlist" />
+        <LibraryCard title="Let’s find some podcasts to follow" subtitle="We’ll keep you updated on new episodes" buttonText="Browse Podcasts" />
 
         <FooterLinks />
-
         <LanguageSelector />
       </aside>
 
-      {/* Overlay for mobile */}
-      {isOpen && (
-        <div
-          className="sm:hidden fixed inset-0 bg-black opacity-50 z-30"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
+      {isOpen && <div className="sm:hidden fixed inset-0 bg-black opacity-50 z-30" onClick={() => setIsOpen(false)} />}
     </>
   );
-};
-
-export default Section;
+}

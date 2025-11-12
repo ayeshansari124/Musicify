@@ -13,7 +13,7 @@ const socials = [
   { src: "./images/svg/facebook.svg", alt: "Facebook" },
 ];
 
-const Footer = () => {
+export default function Footer() {
   return (
     <>
       <footer className="flex flex-wrap justify-around m-2 sm:m-5 p-2 sm:p-5 text-gray-200">
@@ -26,11 +26,10 @@ const Footer = () => {
           </div>
         ))}
 
-        {/* Socials */}
         <div className="flex gap-2 sm:gap-4 mt-2 sm:mt-0">
-          {socials.map((social, idx) => (
-            <div key={idx} className="hover:cursor-pointer hover:scale-110 bg-darkgray h-8 sm:h-10 w-8 sm:w-10 rounded-full m-1 sm:m-2 p-1 sm:p-2 flex items-center justify-center">
-              <img src={social.src} alt={social.alt} className="invert" />
+          {socials.map((s, i) => (
+            <div key={i} className="hover:cursor-pointer hover:scale-110 bg-darkgray h-8 sm:h-10 w-8 sm:w-10 rounded-full m-1 sm:m-2 p-1 sm:p-2 flex items-center justify-center">
+              <img src={s.src} alt={s.alt} className="invert" />
             </div>
           ))}
         </div>
@@ -43,6 +42,4 @@ const Footer = () => {
       </footer>
     </>
   );
-};
-
-export default Footer;
+}

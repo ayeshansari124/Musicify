@@ -41,7 +41,7 @@ It demonstrates:
 
 ## 🚀 Deployment
 
-🔗 [Live Site on Netlify](https://ayeshasspotifyclone.netlify.app/)
+🔗 [Live Site on Netlify](https://ayeshaas-sc.netlify.app/)
 
 ---
 

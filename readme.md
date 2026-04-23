@@ -1,4 +1,4 @@
-# 🎧 Spotify Clone – React + Tailwind Web Player
+# 🎧 Musicify – React + Tailwind Web Player
 
 A **frontend clone** of the official **Spotify Web Player**, rebuilt with **React** and **Tailwind CSS**.  
 This project mimics the sleek Spotify UI with a modern component-based architecture, responsive layouts, and scrollable sections.
